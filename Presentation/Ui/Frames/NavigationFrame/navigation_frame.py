@@ -12,7 +12,7 @@ def navigation_frame(self, customtkinter, const, change_appearance_mode_event):
                                                          font=customtkinter.CTkFont(size=15, weight="bold"))
     self.navigation_frame_label.grid(row=0, column=0, padx=20, pady=20)
 
-    navigation_list_items.navigation_button(self, customtkinter, text=const.navigationButtonText1, image=self.home_image, command=self.home)
+#    navigation_list_items.navigation_button(self, customtkinter, text=const.navigationButtonText1, image=self.home_image, command=self.home)
 
     self.home_button = customtkinter.CTkButton(self.navigation_frame, corner_radius=0, height=40, border_spacing=10,
                                                text=const.navigationButtonText1,
