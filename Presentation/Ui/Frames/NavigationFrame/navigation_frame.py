@@ -1,3 +1,6 @@
+import Presentation.Ui.Frames.NavigationFrame.NavigationListItem.navigation_list_items as navigation_list_items
+
+
 def navigation_frame(self, customtkinter, const, change_appearance_mode_event):
     self.navigation_frame = customtkinter.CTkFrame(self, corner_radius=0)
     self.navigation_frame.grid(row=0, column=0, sticky="nsew")
@@ -8,6 +11,8 @@ def navigation_frame(self, customtkinter, const, change_appearance_mode_event):
                                                          compound="left",
                                                          font=customtkinter.CTkFont(size=15, weight="bold"))
     self.navigation_frame_label.grid(row=0, column=0, padx=20, pady=20)
+
+    navigation_list_items.navigation_button(self, customtkinter, text=const.navigationButtonText1, image=self.home_image, command=self.home)
 
     self.home_button = customtkinter.CTkButton(self.navigation_frame, corner_radius=0, height=40, border_spacing=10,
                                                text=const.navigationButtonText1,
@@ -36,27 +41,3 @@ def navigation_frame(self, customtkinter, const, change_appearance_mode_event):
                                                             values=["System", "Light", "Dark"],
                                                             command=change_appearance_mode_event)
     self.appearance_mode_menu.grid(row=6, column=0, padx=20, pady=20, sticky="s")
-
-
-def select_frame_by_name(self, name, const):
-    # set button color for selected button
-    self.home_button.configure(
-        fg_color=("gray75", "gray25") if name == const.navigationButtonText1 else const.color_transparent)
-    self.frame_2_button.configure(
-        fg_color=("gray75", "gray25") if name == const.navigationButtonText2 else const.color_transparent)
-    self.frame_3_button.configure(
-        fg_color=("gray75", "gray25") if name == const.navigationButtonText3 else const.color_transparent)
-
-    # show selected frame
-    if name == const.navigationButtonText1:
-        self.home_frame.grid(row=0, column=1, sticky="nsew")
-    else:
-        self.home_frame.grid_forget()
-    if name == const.navigationButtonText2:
-        self.second_frame.grid(row=0, column=1, sticky="nsew")
-    else:
-        self.second_frame.grid_forget()
-    if name == const.navigationButtonText3:
-        self.third_frame.grid(row=0, column=1, sticky="nsew")
-    else:
-        self.third_frame.grid_forget()

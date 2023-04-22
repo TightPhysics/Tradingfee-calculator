@@ -1,3 +1,4 @@
 import os
+import customtkinter as tk
 
-print(os.path.join(os.getcwd(), "test_images"))
+tk.CTkOptionMenu()

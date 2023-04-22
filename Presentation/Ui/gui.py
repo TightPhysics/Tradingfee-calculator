@@ -1,8 +1,9 @@
-import ui.interfaces.guiconst as const
-from ui.frames.binance_frame import binance_frame
-from ui.frames.bitget_frame import bitget_frame
-from ui.frames.okx_frame import okx_frame
-import ui.frames.navigation_frame as navframe
+import Domain.Interfaces.guiconst as const
+from Presentation.Ui.Frames.binance_frame import binance_frame
+from Presentation.Ui.Frames.bitget_frame import bitget_frame
+from Presentation.Ui.Frames.okx_frame import okx_frame
+import Presentation.Ui.Frames.NavigationFrame.navigation_frame as navframe
+import Domain.Logic.frame_logic as frame_logic
 import customtkinter
 import os
 from PIL import Image
@@ -55,13 +56,13 @@ class App(customtkinter.CTk):
         okx_frame(self=self, customtkinter=customtkinter, const=const)
 
         # select default frame
-        navframe.select_frame_by_name(self=self, const=const, name=const.navigationButtonText1)
+        frame_logic.select_frame_by_name(self=self, const=const, name=const.navigationButtonText1)
 
     def home_button_event(self):
-        navframe.select_frame_by_name(self=self, const=const, name=const.navigationButtonText1)
+        frame_logic.select_frame_by_name(self=self, const=const, name=const.navigationButtonText1)
 
     def frame_2_button_event(self):
-        navframe.select_frame_by_name(self=self, const=const, name=const.navigationButtonText2)
+        frame_logic.select_frame_by_name(self=self, const=const, name=const.navigationButtonText2)
 
     def frame_3_button_event(self):
-        navframe.select_frame_by_name(self=self, const=const, name=const.navigationButtonText3)
+        frame_logic.select_frame_by_name(self=self, const=const, name=const.navigationButtonText3)
