@@ -1,16 +1,15 @@
+import os
+
+import customtkinter
+from PIL import Image
+
 import Domain.Interfaces.guiconst as const
+import Domain.Logic.frame_logic as frame_logic
+import Presentation.Ui.Frames.NavigationFrame.navigation_frame as navframe
 from Presentation.Ui.Frames.binance_frame import binance_frame
 from Presentation.Ui.Frames.bitget_frame import bitget_frame
 from Presentation.Ui.Frames.okx_frame import okx_frame
-import Presentation.Ui.Frames.NavigationFrame.navigation_frame as navframe
-import Domain.Logic.frame_logic as frame_logic
-import customtkinter
-import os
-from PIL import Image
-
-
-def change_appearance_mode_event(new_appearance_mode):
-    customtkinter.set_appearance_mode(new_appearance_mode)
+from Application.Common.Events.appearance_mode_event import change_appearance_mode_event
 
 
 class App(customtkinter.CTk):

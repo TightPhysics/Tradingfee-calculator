@@ -14,8 +14,8 @@ def bitget_frame(self, customtkinter, const):
                                                       placeholder_text=const.bitget_entryPlaceholder1)
     self.bitget_frame.entry1.grid(row=2, column=0, padx=50, pady=0, sticky="w")
 
-    self.bitget_frame.label1 = customtkinter.CTkLabel(self.bitget_frame, text=const.bitget_label2Text)
-    self.bitget_frame.label1.grid(row=3, column=0, padx=50, pady=(10, 0), sticky="w")
+    self.bitget_frame.label2 = customtkinter.CTkLabel(self.bitget_frame, text=const.bitget_label2Text)
+    self.bitget_frame.label2.grid(row=3, column=0, padx=50, pady=(10, 0), sticky="w")
 
     self.bitget_frame.entry2 = customtkinter.CTkEntry(self.bitget_frame,
                                                       placeholder_text=const.bitget_entryPlaceholder1)
@@ -25,9 +25,19 @@ def bitget_frame(self, customtkinter, const):
     self.bitget_frame_button_3.grid(row=5, column=0, padx=50, pady=20, sticky="w")
 
     # right side
-    self.bitget_frame.optionMenu = customtkinter.CTkOptionMenu(self.bitget_frame, command=select_option_by_name())
+    self.bitget_frame.label3 = customtkinter.CTkLabel(self.bitget_frame, text=const.bitget_label3Text)
+    self.bitget_frame.label3.grid(row=1, column=0, padx=145, pady=0, sticky="e")
+
+    market = ["Futures", "Spot"]
+    self.bitget_frame.optionMenu = customtkinter.CTkOptionMenu(self.bitget_frame,
+                                                               command=select_option_by_name, values=market)
     self.bitget_frame.optionMenu.grid(row=2, column=0, padx=50, pady=0, sticky="e")
 
 
-def select_option_by_name():
-    print("works")
+def select_option_by_name(name):
+    if name == "Futures":
+        print("Futures selected")
+    elif name == "Spot":
+        print("spot selected")
+    else:
+        print("nothing selected")

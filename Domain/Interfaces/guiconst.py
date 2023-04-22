@@ -35,6 +35,7 @@ navigationButtonText3 = "OKX"
 # bitget_frame const:
 bitget_label1Text = "Entry Price"
 bitget_label2Text = "Amount BTC"
+bitget_label3Text = "Market"
 
 bitget_entryPlaceholder1 = "e.g.: 34000.5"
 bitget_entryPlaceholder2 = "e.g.: 0.04"
