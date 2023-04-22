@@ -1,4 +1,6 @@
-# import customtkinter as tk
+from Domain.Logic.bitget.bitget_market_selection import select_option_by_name
+
+
 def bitget_frame(self, customtkinter, const):
     self.bitget_frame = customtkinter.CTkFrame(self, corner_radius=0, fg_color=const.color_transparent)
     self.bitget_frame.grid_columnconfigure(0, weight=1)
@@ -32,12 +34,3 @@ def bitget_frame(self, customtkinter, const):
     self.bitget_frame.optionMenu = customtkinter.CTkOptionMenu(self.bitget_frame,
                                                                command=select_option_by_name, values=market)
     self.bitget_frame.optionMenu.grid(row=2, column=0, padx=50, pady=0, sticky="e")
-
-
-def select_option_by_name(name):
-    if name == "Futures":
-        print("Futures selected")
-    elif name == "Spot":
-        print("spot selected")
-    else:
-        print("nothing selected")
