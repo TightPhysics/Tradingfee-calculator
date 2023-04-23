@@ -32,7 +32,7 @@ navigationButtonText1 = "Binance"
 navigationButtonText2 = "Bitget"
 navigationButtonText3 = "OKX"
 
-navigationButtons = ["Binance, Bitget, OKX"]
+navigationButtons = ["OKX", "Bitget", "Binance"]
 
 # bitget_frame const:
 bitget_label1Text = "Entry Price"
