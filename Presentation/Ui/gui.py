@@ -43,7 +43,7 @@ class App(customtkinter.CTk):
             dark_image=Image.open(os.path.join(image_path, "add_user_light.png")), size=const.image_smallsize)
 
         # create navigation frame
-        NavigationFrame(self)
+        NavigationFrame(app_instance=self)
 
         # create home frame
         BinanceFrame(app_instance=self)
@@ -57,15 +57,4 @@ class App(customtkinter.CTk):
         # select default frame
         frame_logic.select_frame_by_name(self=self, const=const, name=const.navigationButtons[0])
 
-        # self.gui_events_instance.home_button_event()
-
         self.gui_events.dynamic_button_events()
-
-    #def home_button_event(self):
-    #   frame_logic.select_frame_by_name(self=self, const=const, name=const.navigationButtonText1)
-
-    #def frame_2_button_event(self):
-    #    frame_logic.select_frame_by_name(self=self, const=const, name=const.navigationButtonText2)
-
-    #def frame_3_button_event(self):
-    #    frame_logic.select_frame_by_name(self=self, const=const, name=const.navigationButtonText3)
