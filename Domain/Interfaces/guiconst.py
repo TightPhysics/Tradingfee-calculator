@@ -32,6 +32,8 @@ navigationButtonText1 = "Binance"
 navigationButtonText2 = "Bitget"
 navigationButtonText3 = "OKX"
 
+navigationButtons = ["Binance, Bitget, OKX"]
+
 # bitget_frame const:
 bitget_label1Text = "Entry Price"
 bitget_label2Text = "Amount BTC"
