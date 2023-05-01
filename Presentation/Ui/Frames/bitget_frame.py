@@ -1,6 +1,7 @@
 import customtkinter
 import Domain.Interfaces.guiconst as const
 from Domain.Logic.bitget.bitget_market_selection import select_option_by_name
+from Domain.Logic.bitget.bitget_market_selection import is_custom_selected
 
 
 class BitgetFrame:
@@ -40,20 +41,42 @@ class BitgetFrame:
             placeholder_text=const.bitget_entryPlaceholder1)
         self.app_instance.bitget_frame.entry2.grid(row=4, column=0, padx=50, pady=0, sticky="w")
 
-        self.app_instance.bitget_frame_button_3 = customtkinter.CTkButton(
-            self.app_instance.bitget_frame, text="OK",
-            compound="top")
-        self.app_instance.bitget_frame_button_3.grid(row=5, column=0, padx=50, pady=20, sticky="w")
-
-        # right side
         self.app_instance.bitget_frame.label3 = customtkinter.CTkLabel(
             self.app_instance.bitget_frame,
-            text=const.bitget_label3Text)
-        self.app_instance.bitget_frame.label3.grid(row=1, column=0, padx=145, pady=0, sticky="e")
+            text="Fee"
+        )
+        self.app_instance.bitget_frame.label3.grid(
+            row=5, column=0, padx=50, pady=(10, 0), sticky="w")
+        self.app_instance.bitget_frame.label3.grid_remove()
 
-        market = ["Futures", "Spot"]
+        self.app_instance.bitget_frame.entry3 = customtkinter.CTkEntry(
+            self.app_instance.bitget_frame,
+            placeholder_text="e.g.: 20% = 0.2"
+        )
+        self.app_instance.bitget_frame.entry3.grid(
+            row=6, column=0, padx=50, pady=0, sticky="w")
+        self.app_instance.bitget_frame.entry3.grid_remove()
+
+        # right side
+        self.app_instance.bitget_frame.label4 = customtkinter.CTkLabel(
+            self.app_instance.bitget_frame,
+            text=const.bitget_label3Text)
+        self.app_instance.bitget_frame.label4.grid(row=1, column=0, padx=145, pady=0, sticky="e")
+
         self.app_instance.bitget_frame.optionMenu = customtkinter.CTkOptionMenu(
             self.app_instance.bitget_frame,
-            command=select_option_by_name,
-            values=market)
+            command=self.app_instance.gui_events.select_option_by_name,
+            values=const.market)
         self.app_instance.bitget_frame.optionMenu.grid(row=2, column=0, padx=50, pady=0, sticky="e")
+
+        # main buttons
+        max_rows = self.app_instance.bitget_frame.grid_size()[1]
+        self.app_instance.bitget_frame.grid_columnconfigure(0, weight=1)
+        self.app_instance.bitget_frame.grid_rowconfigure(8, weight=1)
+
+        self.app_instance.bitget_frame_button_3 = customtkinter.CTkButton(
+            self.app_instance.bitget_frame,
+            text="OK",
+            compound="bottom",
+            anchor="s")
+        self.app_instance.bitget_frame_button_3.grid(row=8, column=0, padx=20, pady=20, sticky="se",)

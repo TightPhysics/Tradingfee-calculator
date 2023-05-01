@@ -1,3 +1,4 @@
+
 def select_frame_by_name(self, name, const):
     # set button color for selected button
     self.binance_button.configure(

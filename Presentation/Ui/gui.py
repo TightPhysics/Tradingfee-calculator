@@ -4,12 +4,11 @@ import customtkinter
 from PIL import Image
 
 import Domain.Interfaces.guiconst as const
-import Domain.Logic.frame_logic as frame_logic
+from Application.Common.Events.gui_events import GuiEvent
+from Presentation.Ui.Frames.NavigationFrame.navigation_frame import NavigationFrame
 from Presentation.Ui.Frames.binance_frame import BinanceFrame
 from Presentation.Ui.Frames.bitget_frame import BitgetFrame
 from Presentation.Ui.Frames.okx_frame import OKXFrame
-from Presentation.Ui.Frames.NavigationFrame.navigation_frame import NavigationFrame
-from Application.Common.Events.gui_events import GuiEvent
 
 
 class App(customtkinter.CTk):
@@ -20,6 +19,7 @@ class App(customtkinter.CTk):
 
         self.title(const.titleText)
         self.geometry(const.geometry)
+        self.resizable(width=False, height=False)
 
         # set grid layout 1x2
         self.grid_rowconfigure(0, weight=1)
@@ -28,10 +28,11 @@ class App(customtkinter.CTk):
         # load images with light and dark mode image
         self.image_path = os.path.join("test_images")
 
-        self.large_test_image = customtkinter.CTkImage(Image.open(os.path.join(self.image_path, "large_test_image.png")),
-                                                       size=const.image_largesize)
-        self.image_icon_image = customtkinter.CTkImage(Image.open(os.path.join(self.image_path, "image_icon_light.png")),
-                                                       size=const.image_smallsize)
+        self.large_test_image = customtkinter.CTkImage(Image.open(os.path.join(
+            self.image_path, "large_test_image.png")), size=const.image_largesize)
+        self.image_icon_image = customtkinter.CTkImage(Image.open(os.path.join(
+            self.image_path, "image_icon_light.png")), size=const.image_smallsize)
+
         self.home_image = customtkinter.CTkImage(light_image=Image.open(os.path.join(self.image_path, "home_dark.png")),
                                                  dark_image=Image.open(os.path.join(self.image_path, "home_light.png")),
                                                  size=const.image_smallsize)

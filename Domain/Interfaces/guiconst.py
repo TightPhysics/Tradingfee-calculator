@@ -41,3 +41,5 @@ bitget_label3Text = "Market"
 
 bitget_entryPlaceholder1 = "e.g.: 34000.5"
 bitget_entryPlaceholder2 = "e.g.: 0.04"
+
+market = ["Futures", "Spot", "Custom"]
