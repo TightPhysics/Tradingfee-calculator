@@ -25,12 +25,11 @@ class GuiEvent:
     def select_option_by_name(self, name):
         if name is not const.market[2]:
             self.remove_fee_widgets()
-        elif name == "Futures":
+        elif name == const.market[0]:
             print("Futures selected")
-        elif name == "Spot":
+        elif name == const.market[1]:
             print("spot selected")
-        elif name == "Custom":
-            print("done")
+        elif name == const.market[2]:
             self.add_fee_widgets()
         else:
             print("nothing selected")
