@@ -1,7 +1,7 @@
 import customtkinter
 import Domain.Interfaces.guiconst as const
-from Domain.Logic.bitget.bitget_market_selection import select_option_by_name
-from Domain.Logic.bitget.bitget_market_selection import is_custom_selected
+from Domain.Logic.bitget.bitget_calculation import calculate
+import Application.Common.Events.gui_events as events
 
 
 class BitgetFrame:
@@ -38,7 +38,7 @@ class BitgetFrame:
 
         self.app_instance.bitget_frame.entry2 = customtkinter.CTkEntry(
             self.app_instance.bitget_frame,
-            placeholder_text=const.bitget_entryPlaceholder1)
+            placeholder_text=const.bitget_entryPlaceholder2)
         self.app_instance.bitget_frame.entry2.grid(row=4, column=0, padx=50, pady=0, sticky="w")
 
         self.app_instance.bitget_frame.label3 = customtkinter.CTkLabel(
@@ -69,14 +69,31 @@ class BitgetFrame:
             values=const.market)
         self.app_instance.bitget_frame.optionMenu.grid(row=2, column=0, padx=50, pady=0, sticky="e")
 
-        # main buttons
-        max_rows = self.app_instance.bitget_frame.grid_size()[1]
+        # bottom menu
         self.app_instance.bitget_frame.grid_columnconfigure(0, weight=1)
         self.app_instance.bitget_frame.grid_rowconfigure(8, weight=1)
 
         self.app_instance.bitget_frame_button_3 = customtkinter.CTkButton(
             self.app_instance.bitget_frame,
             text="OK",
+            command=self.app_instance.gui_events.ok_button_event,
             compound="bottom",
             anchor="s")
-        self.app_instance.bitget_frame_button_3.grid(row=8, column=0, padx=20, pady=20, sticky="se",)
+        self.app_instance.bitget_frame_button_3.grid(row=8, column=0, padx=20, pady=20, sticky="se")
+
+        self.app_instance.bitget_frame.label5 = customtkinter.CTkLabel(
+            self.app_instance.bitget_frame,
+            text="Fee for you trade: ",
+            compound="bottom",
+            anchor="s"
+        )
+        self.app_instance.bitget_frame.label5.grid(row=8, column=0, padx=20, pady=20, sticky="sw")
+
+        self.app_instance.bitget_frame.label5 = customtkinter.CTkLabel(
+            self.app_instance.bitget_frame,
+            text="",
+            compound="bottom",
+            anchor="s"
+        )
+        self.app_instance.bitget_frame.label5.grid(row=8, column=0, padx=130, pady=20, sticky="sw")
+        self.app_instance.bitget_frame.label5.grid_remove()

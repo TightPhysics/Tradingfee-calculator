@@ -1,5 +1,6 @@
 import Domain.Logic.frame_logic as frame_logic
 import Domain.Interfaces.guiconst as const
+from Domain.Logic.bitget.bitget_calculation import calculate
 
 
 class GuiEvent:
@@ -41,3 +42,26 @@ class GuiEvent:
     def add_fee_widgets(self):
         self.app_instance.bitget_frame.label3.grid()
         self.app_instance.bitget_frame.entry3.grid()
+
+    def ok_button_event(self):
+        print(calculate(
+                entry=self.app_instance.bitget_frame.entry1.get(),
+                amount=self.app_instance.bitget_frame.entry2.get(),
+                fee=self.app_instance.bitget_frame.entry3.get(),
+                market=self.app_instance.bitget_frame.optionMenu.get()))
+
+        self.app_instance.bitget_frame.label5.grid_remove()
+        self.app_instance.bitget_frame.label5.configure(
+            text=calculate(
+                entry=self.app_instance.bitget_frame.entry1.get(),
+                amount=self.app_instance.bitget_frame.entry2.get(),
+                fee=self.app_instance.bitget_frame.entry3.get(),
+                market=self.app_instance.bitget_frame.optionMenu.get()))
+        self.app_instance.bitget_frame.label5.grid()
+
+    def calculation_event(self):
+        self.app_instance.bitget_frame.label5.config(text=calculate(
+            entry=self.app_instance.bitget_frame.entry1.get(),
+            amount=self.app_instance.bitget_frame.entry2.get(),
+            fee=self.app_instance.bitget_frame.entry3.get(),
+            market=self.app_instance.bitget_frame.optionMenu.get()))
