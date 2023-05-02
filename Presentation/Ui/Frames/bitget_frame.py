@@ -65,7 +65,7 @@ class BitgetFrame:
 
         self.app_instance.bitget_frame.optionMenu = customtkinter.CTkOptionMenu(
             self.app_instance.bitget_frame,
-            command=self.app_instance.gui_events.select_option_by_name,
+            command=self.app_instance.gui_events.on_select_option_by_name,
             values=const.market)
         self.app_instance.bitget_frame.optionMenu.grid(row=2, column=0, padx=50, pady=0, sticky="e")
 
@@ -76,7 +76,7 @@ class BitgetFrame:
         self.app_instance.bitget_frame_button_3 = customtkinter.CTkButton(
             self.app_instance.bitget_frame,
             text="OK",
-            command=self.app_instance.gui_events.ok_button_event,
+            command=self.app_instance.gui_events.on_ok_button_event,
             compound="bottom",
             anchor="s")
         self.app_instance.bitget_frame_button_3.grid(row=8, column=0, padx=20, pady=20, sticky="se")

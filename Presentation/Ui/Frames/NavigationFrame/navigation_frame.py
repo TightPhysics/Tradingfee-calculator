@@ -41,7 +41,7 @@ class NavigationFrame:
             text_color=("gray10", "gray90"),
             hover_color=("gray70", "gray30"),
             image=self.app_instance.home_image, anchor="w",
-            command=self.app_instance.gui_events.binance_navigation_button_event)
+            command=self.app_instance.gui_events.on_binance_navigation_button_event)
         self.app_instance.binance_button.grid(row=1, column=0, sticky="ew")
 
         self.app_instance.bitget_button = customtkinter.CTkButton(
@@ -52,7 +52,7 @@ class NavigationFrame:
             text_color=("gray10", "gray90"),
             hover_color=("gray70", "gray30"),
             image=self.app_instance.chat_image, anchor="w",
-            command=self.app_instance.gui_events.bitget_navigation_button_event)
+            command=self.app_instance.gui_events.on_bitget_navigation_button_event)
         self.app_instance.bitget_button.grid(row=2, column=0, sticky="ew")
 
         self.app_instance.okx_button = customtkinter.CTkButton(

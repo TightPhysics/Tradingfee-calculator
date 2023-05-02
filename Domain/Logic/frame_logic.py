@@ -1,4 +1,3 @@
-
 def select_frame_by_name(self, name, const):
     # set button color for selected button
     self.binance_button.configure(
@@ -21,7 +20,6 @@ def select_frame_by_name(self, name, const):
         self.third_frame.grid(row=0, column=1, sticky="nsew")
     else:
         self.third_frame.grid_forget()
-
 
 
 def select_option_by_name(name):
