@@ -2,8 +2,8 @@
 
 # image size const:
 image_smallsize = 20, 20
-image_logoiconsize = 26, 26
-image_largesize = 500, 150
+image_logoiconsize = 30, 30
+image_largesize = 450, 90
 
 # theming const:
 appearance_mode = "System"
@@ -43,3 +43,4 @@ bitget_entryPlaceholder1 = "e.g.: 34000.5"
 bitget_entryPlaceholder2 = "e.g.: 0.04"
 
 market = ["Futures", "Spot", "Custom"]
+makerortaker_list = ["Maker", "Taker"]

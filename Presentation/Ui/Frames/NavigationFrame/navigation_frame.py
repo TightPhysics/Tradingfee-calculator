@@ -15,10 +15,10 @@ class NavigationFrame:
         self.navigation_frame = customtkinter.CTkFrame(self.app_instance, corner_radius=0)
         self.navigation_frame.grid(row=0, column=0, sticky="nsew")
 
-        image_path = os.path.join("test_images")
+        image_path = os.path.join("images")
 
         self.app_instance.logo_image = customtkinter.CTkImage(Image.open(
-            os.path.join(image_path, "CustomTkinter_logo_single.png")),
+            os.path.join(image_path, "trading-fee-calc-logo.png")),
             size=const.image_logoiconsize)
 
         self.navigation_frame.grid_rowconfigure(4, weight=1)

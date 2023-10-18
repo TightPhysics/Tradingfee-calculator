@@ -32,3 +32,6 @@ class GuiEvent:
 
     def on_ok_button_event(self):
         self.bitget_usecase.ok_button_event()
+
+    def on_clipboard_event(self):
+        self.bitget_usecase.clipboard_event()

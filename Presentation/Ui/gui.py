@@ -26,10 +26,10 @@ class App(customtkinter.CTk):
         self.grid_columnconfigure(1, weight=1)
 
         # load images with light and dark mode image
-        self.image_path = os.path.join("test_images")
+        self.image_path = os.path.join("images")
 
         self.large_test_image = customtkinter.CTkImage(Image.open(os.path.join(
-            self.image_path, "large_test_image.png")), size=const.image_largesize)
+            self.image_path, "large_image_3_binance_edit.png")), size=const.image_largesize)
         self.image_icon_image = customtkinter.CTkImage(Image.open(os.path.join(
             self.image_path, "image_icon_light.png")), size=const.image_smallsize)
 
@@ -42,6 +42,11 @@ class App(customtkinter.CTk):
         self.add_user_image = customtkinter.CTkImage(
             light_image=Image.open(os.path.join(self.image_path, "add_user_dark.png")),
             dark_image=Image.open(os.path.join(self.image_path, "add_user_light.png")), size=const.image_smallsize)
+
+        self.copy_symbol_image = customtkinter.CTkImage(
+            light_image=Image.open(os.path.join(self.image_path, "copy_symbol_dark.png")),
+            dark_image=Image.open(os.path.join(self.image_path, "copy_symbol_white.png")), size=const.image_smallsize
+        )
 
         # create navigation frame
         NavigationFrame(app_instance=self)
